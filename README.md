@@ -2,8 +2,8 @@
 
 A media streaming web application developed on Angular 4, PHP, Laravel, Bootstrap, MySQL, Apache, Backpack and JW Player.
 
-screen4-app - contains the Laravel backend project
-screen4-ui - contains the Angular 4 front end project
+1. screen4-app - contains the Laravel backend project
+2. screen4-ui - contains the Angular 4 front end project
 
 This application demonstrates the following:
 
