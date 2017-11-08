@@ -1,0 +1,22 @@
+  user woarkqs! My name is {{name}}
+
+  {{email}}
+  {{phone}}
+  {{hobbies.hobby}}
+  {{hobbies.interests}}
+  {{hobbies.sports}}
+  <button (click)=onClick()>Click Me</button>  
+  <h1>Posts</h1>
+  <form>
+  <div>
+    <label for="email">Email:</label><br>
+    <input type="text" [(ngModel)] = "email" name="email">
+  </div> 
+
+  </form>
+  <form (submit)="addUser(nam.value)">
+    <div>
+      <label for="lblName">Name</label>  
+      <input type="text" #nam> 
+    </div>
+  </form>

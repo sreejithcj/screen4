@@ -1,0 +1,56 @@
+<app-header></app-header>
+	<div class="container">
+	<div class="row">
+		<div class="col-sm-12">
+			<a href="/video?url={{url}}&image={{largeImage}}">
+				<div class="holder">
+					<img class="img-responsive" style="width:100%" src="{{largeImage}}"/>
+					<img class="play" src="../../../assets/images/icon-play-large.svg" style="width:50px;height:auto"/>
+				</div>
+			</a>	
+			<h1>{{title}}</h1>
+			<strong>{{genre}}</strong>
+			<p>{{duration}} • {{ year | date : "y"}}</p>
+			<p>{{brief}}</p>
+		</div>		
+	</div>
+	<hr>
+<div class="row">
+<div class="col-lg-4">
+<form #f="ngForm" (ngSubmit)="onComment()">
+  <div class="form-group">
+	<label for="email">Write your comment</label>
+	<div *ngIf="!getUserName()">
+			<a a routerLink="/signin">Signin to post comments</a>
+	</div>   
+	<textarea name="comment" [(ngModel)]="video.comment" #comment="ngModel" style="margin: 0px; width: 100%; min-height: 100px;" required></textarea>   
+  </div>
+  <button type="submit" [disabled]="!f.valid || !getUserName()" class="btn btn-primary">Submit</button>
+</form>
+</div>
+<div class="col-lg-8">
+</div>
+</div>
+<div class="row">
+<div class="col-lg-12">
+	<h3>Comments</h3>
+<div class="col-lg-8">
+		<div *ngIf="comments?.length > 0;then content else other_content"></div>	
+		<ng-template #content>
+		<ng-container *ngFor="let comment of comments">
+	   	<div class="row">
+		<div class="col-lg-12">
+			<p><strong>{{comment.name}}</strong></p>
+			<p>{{ comment.created_at | date : "MMMM d y"}}</p>
+			<p>{{comment.comment}}</p>
+		</div>	
+		</div>
+		</ng-container>
+	</ng-template>
+	<ng-template #other_content>No comments</ng-template>
+</div>
+<div class="col-lg-4">
+</div>
+</div>
+</div>
+<app-footer></app-footer>
