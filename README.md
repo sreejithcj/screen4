@@ -15,7 +15,7 @@ This application demonstrates the following:
 
 Next versions - Would like to do the following in next versions:
 
-1. Implement Sphinx for website search
-2. Configure nginx webserver as reverse proxy for serving static files
-3. Make the applications production ready and deply in Amazon AWS
+1. Implement Sphinx for website search.
+2. Configure nginx webserver as reverse proxy for serving static files.
+3. Make the application production ready and deploy in Amazon AWS.
 4. Stream the videos from Amazon CloudFront instaed of YouTube.
